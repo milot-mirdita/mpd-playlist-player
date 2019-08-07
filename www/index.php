@@ -47,7 +47,8 @@ function playlistsToTree($playlists) {
 function play($playlist) {
     exec('mpc clear');
     exec('mpc load ' . escapeshellarg($playlist));
-    exec('mpc shuffle');
+    exec('mpc random on');
+    exec('mpc repeat on');
     exec('mpc play');
     return exec('mpc current');
 }
